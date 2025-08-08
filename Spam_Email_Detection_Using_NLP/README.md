@@ -108,7 +108,7 @@ We used the **Enron Email Dataset**:
 
 **video demo**  
 
-![video_demo](assets/spam_demo.mp4)
+![video_demo](assets/output.gif)
 
 ---
 
