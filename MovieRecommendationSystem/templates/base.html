@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{% block title %}Find Your Movie{% endblock %}</title>
+  <link rel="stylesheet" href="{{url_for('static', filename='base.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='movie.css')}}">
+
+  {% block style %}{% endblock %}
+</head>
+<body>
+  <section class="hero">
+    <div class="logo">◼ ◯ ▲</div>
+    <h1>What will you watch?</h1>
+    <p>Type your favorite film to start.</p>
+    <div class="search-toggle">
+      <div class="search-container" id="searchContainer">
+        <button id="searchBtn">Find Movies</button>
+        <input type="text" id="searchInput" placeholder="Search for a movie..." autocomplete="off" />
+        <div class="suggestions" id="suggestionsBox"></div>
+      </div>
+    </div>
+  </section>
+
+  {% block content %}{% endblock %}
+
+  <script src="{{url_for('static', filename='base.js')}}">  </script>
+</body>
+</html>

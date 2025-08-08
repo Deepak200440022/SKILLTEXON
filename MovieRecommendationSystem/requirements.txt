@@ -1,0 +1,6 @@
+kagglehub
+pandas
+pyarrow
+numpy
+nltk
+flask

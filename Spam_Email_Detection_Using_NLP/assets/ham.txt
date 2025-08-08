@@ -1,0 +1,11 @@
+Hi Sarah,
+
+Just a quick reminder about our project sync-up scheduled for tomorrow at 10:00 AM in Conference Room B. We'll review the current progress, address any blockers, and finalize the next sprint's tasks.
+
+Please bring the updated UI mockups and any feedback from the client meeting.
+
+Let me know if you need to reschedule.
+
+Best,
+Michael
+Product Manager, DevOps Team

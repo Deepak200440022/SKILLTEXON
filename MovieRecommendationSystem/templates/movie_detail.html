@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block style %}
+<style>
+
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <div class="poster-section">
+    <img src="{{ movie.poster_path }}" alt="{{ movie.title }} Poster">
+    {% if movie.adult %}
+    <div class="adult-badge">18+</div>
+    {% endif %}
+  </div>
+
+  <div class="movie-info">
+    <div class="title">{{ movie.title }}</div>
+    <div class="tagline">{{ movie.tagline or '' }}</div>
+    <div class="meta">Release Date: {{ movie.release_date or 'N/A' }}</div>
+    <div class="meta">Runtime: {{ movie.runtime or 'N/A' }} </div>
+  </div>
+
+  <div class="overview-section">
+    <div class="overview-title">Overview</div>
+    <div class="overview-text">
+      {{ movie.overview or 'Overview not available.' }}
+    </div>
+  </div>
+
+  <div class="cast-section" id="cast-section">
+    <div class="cast-title">Cast</div>
+    {% if movie.cast %}
+    <table class="cast-table" id="cast-table">
+      <thead>
+        <tr>
+          <th>Actor</th>
+          <th>Character</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for member in movie.cast %}
+        <tr class="cast-row {% if loop.index > 10 %}extra-cast{% endif %}">
+          <td>{{ member["name"] }}</td>
+          <td>{{ member["character"] }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <button id="toggle-cast-btn" onclick="toggleCast()">Show Full Cast</button>
+    {% else %}
+    <p style="text-align:center; color:#666;">No cast information available.</p>
+    {% endif %}
+  </div>
+
+  <div class="recommendation-section">
+    <div class="recommendation-title">You Might Also Like</div>
+    <div class="recommendations">
+      {% for rec in recommendations %}
+      <div class="recommend-card">
+        <a href="/movie/{{ rec.id }}">
+          <img src="{{ rec.poster_path }}" alt="{{ rec.title }}">
+        </a>
+        <div class="recommend-title">{{ rec.title }}</div>
+        <div class="recommend-meta">{{ rec.genre or 'Genre' }}</div>
+        <div class="recommend-score">{{ rec.rating or 'N/A' }}/10 IMDb</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block script %}
+  <script src="{{url_for('static', filename='movie.js')}}">  </script>
+
+{% endblock %}

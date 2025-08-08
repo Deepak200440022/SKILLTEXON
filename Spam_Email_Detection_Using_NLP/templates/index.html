@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Spam vs Ham Classifier</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+</head>
+<body class="bg-white font-sans">
+
+  <div class="relative min-h-screen flex flex-col pb-24">
+    <!-- HEADER -->
+    <header class="flex justify-between items-center border-b px-10 py-4 text-[#131712]">
+      <div class="flex items-center gap-3">
+        <div class="w-4 h-4">
+          <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M36.7273 44C33.9891 44 31.6043 39.8386 30.3636 33.69C29.123 39.8386 26.7382 44 24 44C21.2618 44 18.877 39.8386 17.6364 33.69C16.3957 39.8386 14.0109 44 11.2727 44C7.25611 44 4 35.0457 4 24C4 12.9543 7.25611 4 11.2727 4C14.0109 4 16.3957 8.16144 17.6364 14.31C18.877 8.16144 21.2618 4 24 4C26.7382 4 29.123 8.16144 30.3636 14.31C31.6043 8.16144 33.9891 4 36.7273 4C40.7439 4 44 12.9543 44 24C44 35.0457 40.7439 44 36.7273 44Z" fill="currentColor"/>
+          </svg>
+        </div>
+        <h2 class="text-lg font-bold">Message Classifier</h2>
+      </div>
+    </header>
+
+    <!-- MAIN -->
+    <main class="px-10 py-8 max-w-4xl mx-auto w-full">
+      <h1 class="text-3xl font-bold mb-2">Spam vs. Ham Classifier</h1>
+      <p class="text-sm text-gray-600 mb-6">Type or upload a message to classify it.</p>
+
+      <form id="messageForm" method="POST" enctype="multipart/form-data">
+        <textarea name="message" id="messageInput" placeholder="Enter your message here..."
+          class="w-full border border-gray-300 rounded-lg p-4 mb-4 text-sm resize-none overflow-hidden transition-all"
+          oninput="autoResize(this)">{{ message if message else '' }}</textarea>
+
+        <div class="flex gap-4 mb-6">
+          <input type="file" name="file" id="fileInput" accept=".txt" class="text-sm" />
+          <button type="button" id="resetBtn" class="bg-gray-200 text-black px-4 py-2 rounded-lg font-semibold text-sm">New Email</button>
+        </div>
+
+        <button type="submit" id="classifyBtn"
+          class="bg-green-500 text-white px-6 py-2 rounded-lg font-semibold text-sm fixed bottom-6 right-6 z-50 shadow-lg">Classify</button>
+      </form>
+    </main>
+  </div>
+
+  {% if result %}
+  <div id="overlay" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 flex items-center justify-center">
+    <div id="resultBox"
+      class="rounded-xl shadow-xl w-[320px] max-w-[90%] text-center p-6 scale-90 opacity-0 relative text-white {{ 'bg-red-500' if result == 'Spam' else 'bg-green-500' }}">
+      <button id="closePopup" class="absolute top-2 right-3 text-white text-lg font-bold">&times;</button>
+      <h2 id="resultTitle" class="text-xl font-bold mb-2">{{ result }} Detected</h2>
+      <p id="resultDesc" class="text-sm">
+        {{ 'This message appears to be spam.' if result == 'Spam' else 'This message appears to be legitimate.' }}
+      </p>
+    </div>
+  </div>
+  {% endif %}
+ <script src="{{ url_for('static', filename='script.js')}}"></script>
+
+
+</body>
+</html>

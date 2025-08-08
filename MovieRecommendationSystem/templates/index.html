@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+
+{% block title %}Find Your Movie{% endblock %}
+
+{% block content %}
+
+
+<div class="main-grid">
+  {% for movie in movies %}
+  <a href="/movie/{{ movie.id }}" class="movie-card-link">
+    <div class="movie-card">
+      <img src="{{ movie.poster_path }}" alt="{{ movie.title }} Poster">
+      <div class="movie-card-content">
+        <div class="movie-title">{{ movie.title }}</div>
+        <div class="movie-meta">{{ movie.genre.split(', ')[:3] | join(', ') }} | {{ movie.rating }}</div>
+      </div>
+    </div>
+  </a>
+  {% endfor %}
+</div>
+
+
+  <section class="features">
+    <div class="feature-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/54/54481.png" alt="Search Icon">
+      <div class="feature-title">Search movies</div>
+      <div class="feature-desc">Type to find any movie and see its details right away.</div>
+    </div>
+    <div class="feature-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/709/709496.png" alt="Recommend Icon">
+      <div class="feature-title">Recommendations</div>
+      <div class="feature-desc">Get 10 top movie suggestions tailored to your choice.</div>
+    </div>
+    <div class="feature-box">
+      <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Visual Icon">
+      <div class="feature-title">Visual details</div>
+      <div class="feature-desc">See posters, votes, overviews for every movie shown.</div>
+    </div>
+  </section>
+
+
+{% endblock %}
