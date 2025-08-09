@@ -125,7 +125,7 @@ Key packages used:
 
 ## Demo
 
-![Demo](assets/demo.mp4)
+![Demo](assets/demo.gif)
 ---
 
 ## Acknowledgements
