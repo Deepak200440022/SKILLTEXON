@@ -101,12 +101,17 @@ We used data from two high-quality open datasets:
    pip install -r requirements.txt
    ```
 
-2. Run Flask app:
+2. download dataset:
+   ```bash
+   python datasetdownload.py
+   ```
+
+3. Run Flask app:
    ```bash
    python app.py
    ```
 
-3. Open your browser at:
+4. Open your browser at:
    ```
    http://127.0.0.1:5000/
    ```
