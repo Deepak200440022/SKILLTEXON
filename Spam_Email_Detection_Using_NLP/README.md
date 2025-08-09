@@ -39,6 +39,7 @@ We used the **Enron Email Dataset**:
 ├── app.py
 ├── train.py
 ├── data_preprocessing.py
+├── download_dataset.py
 ├── model_stats.json
 ├── spam_classifier_model.joblib
 ├── tfidf_vectorizer.joblib
@@ -75,17 +76,29 @@ We used the **Enron Email Dataset**:
    pip install -r requirements.txt
    ```
 
-2. Train the model (if not already trained):
+
+2. Download dataset:
+   ```bash
+   python download_dataset.py
+   ```
+
+
+3. Preprocess data:
+   ```bash
+   python data_preprocessing.py
+   ```
+
+4. Train the model (if not already trained):
    ```bash
    python train.py
    ```
 
-3. Run the Flask application:
+5. Run the Flask application:
    ```bash
    python app.py
    ```
 
-4. Visit the app in your browser:
+6. Visit the app in your browser:
    ```
    http://127.0.0.1:5000/
    ```
