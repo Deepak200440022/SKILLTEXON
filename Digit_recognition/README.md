@@ -70,8 +70,8 @@ Email: deepak20044002@gmail.com
 ## Installation
 
 ```bash
-git clone https://github.com/Deepak200440022/SKILLTEXON/digit-recognizer.git
-cd digit-recognizer
+git clone https://github.com/Deepak200440022/SKILLTEXON
+cd Digit_recognition
 pip install -r requirements.txt
 python recognizer.py
 ```
