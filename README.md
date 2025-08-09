@@ -1,4 +1,3 @@
-```markdown
 # Skilltexon AI/ML Internship – Project Portfolio
 
 ## Overview
@@ -74,5 +73,4 @@ Skilltexon is an ed-tech platform focused on delivering **hands-on, project-base
 **LinkedIn**: [linkedin.com/in/deepak-sharma](https://www.linkedin.com/in/deepak-sharma-0444b632a/)  
 **GitHub**: [github.com/deepak200440022](https://github.com/deepak200440022)
 
----
-```
+
