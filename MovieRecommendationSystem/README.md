@@ -175,7 +175,7 @@ Illustrates the result popup with GSAP animation, background blur, and dismiss b
 ## Demo
 
 A video showcasing search, recommendation, and UI navigation:   
-![demo](assets/movie_demo.mp4)
+![demo](assets/demo.gif)
 
 ---
 
