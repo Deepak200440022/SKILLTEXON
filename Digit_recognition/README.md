@@ -59,7 +59,7 @@ This project allows users to draw digits or upload an image to get real-time pre
 
 ## Demo Video
 
-![Confusion](assets/digit_demo.mp4)
+![Confusion](assets/output.gif)
 ## Author
 
 Name: Deepak Sharma
