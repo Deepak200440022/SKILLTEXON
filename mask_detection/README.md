@@ -115,7 +115,7 @@ Below is the training performance graph (`assets/training_metrics.png`):
 
 ## Demo
 Below is the demo video of this project
-![Demo_video](assets/demo.mp4)
+![Demo_video](assets/demo.gif)
 
 ---
 
