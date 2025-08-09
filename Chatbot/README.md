@@ -109,13 +109,18 @@ Key packages used:
 
 ## How to Run
 
-1. Train your own model using:
+1. Download dataset
+   ```bash
+   python dataset_download.py
+   ```
+
+2. Train your own model using:
    ```bash
    python data_preprocessing.py
    ```
    Logs will be saved under `logs/` and a model as `model.h5`.
 
-2. Launch the chatbot UI:
+3. Launch the chatbot UI:
    ```bash
    python chatbot.py
    ```
