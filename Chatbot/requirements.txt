@@ -3,3 +3,4 @@ nltk
 scikit-learn
 tensorflow
 matplotlib
+pyqt5
