@@ -4,3 +4,4 @@ pyarrow
 numpy
 nltk
 flask
+scikit-learn
